@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<!-- saved from url=(0085)http://www.cs.binghamton.edu/~mgovinda/courses/cs342/assignments/assign1/assign1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title> Program Design Patterns: Assignment 1</title>
+</head>
+
+<body>
+<h1> Assignment 1  </h1>
+
+
+<h2> Due date </h2>
+<ul> 
+<li> Due by 11.59 AM EST on Monday, Feb 15th. 
+</li></ul>
+
+<br> 
+
+Submit your code as per the provided instructions. A signup sheet will
+be provided to you during class to setup an appointment with the TA to
+provide a demo of your project. 
+
+
+
+<h3> Updates </h3>
+
+<ul>
+</ul>
+
+<h3> Assignment Goal </h3>
+
+Through this assignment you will learn to use threads and apply good
+design principles.
+
+
+<h3> Team Work </h3>
+Team work is NOT allowed. You have to work alone on this project. You
+CANNOT collaborate or discuss the design, implementation, or debugging
+ideas with any other students.
+
+<h3> Programming Language </h3>
+You are required to program using Java.
+
+<h3> Compilation Method </h3> 
+
+<ul>
+
+<li> Your code should compile and run on <i> bingsuns </i> or the <i>
+debian-pods </i> in the Computer Science lab in the Engineering
+Building via ANT.
+
+</li></ul> 
+
+
+<h3> Policy on sharing of code </h3>
+
+<li> EVERY line of code that you submit in this assignment should be
+written by you or be part of the code template provided for this
+assignment. Do NOT show your code to any other group. Our
+code-comparison software can very easily detect similarities.
+
+</li><li> Post to the listserv if you have any questions about the
+requirements. Do NOT post your code to the listserv asking for help
+with debugging. 
+
+
+<h2>  Project Description  </h2>
+
+<h3> Generating factors of a large number using threads </h3>
+
+<ul>
+
+<li> You are required to write multithreaded code to find all factors for a given positive integer.
+
+</li><li> Accept the following as command line arguments. Note that the
+command line arguments are specified in the build.xml file as
+properties of the "java" command for the target "run".
+
+<ul>
+<li> the integer for which factors need to be found
+</li><li> the number of threads that should to used for this application
+</li><li> Debug level
+</li></ul>
+
+</li><li> Use Debug in the following way:
+<ul>
+<li> If Debug value is 9 or greater: print evey debug statement
+
+</li><li> If Debug value is 7 or greater: print entry into constructors, and entry/exit from the thread's run method
+
+</li><li> If Debug is 5 or greater, check the FIXMEs in the code template for what needs to be printed.
+
+</li></ul>
+
+</li><li> Write code to take care of all the FIXMEs in the provided code template.
+
+</li><li> The grading instructions explain the points distribution for this assignment.
+
+</li></ul>
+
+
+ 
+
+<h2>  Code Organization </h2>
+
+<ul>
+<li> Your directory and file structure should NOT be different than what has been provided in the code template.
+</li></ul>
+
+
+<h2>  Code Templates </h2>
+<ul> 
+<li> Use the following <a href="http://www.cs.binghamton.edu/~mgovinda/courses/cs342/assignments/assign1/threadsStarter.tar.gz">code template</a>.
+</li><li> You can untar using the following commands on bingsuns (or any *nix machine)
+     <ul> 
+     <li> gunzip  threadStarter.tar.gz
+     </li><li> tar -xvf threadStarter.tar
+     </li></ul>
+
+</li><li> You can comple and run the code with the following commands in
+the directory threadsStarter. Note that the file build.xml controls
+the processing of compiling, creating jar files, and running the code.
+
+<ul>
+<li> ant compile
+</li><li> ant jar
+</li><li> ant run
+</li></ul>
+</li></ul>
+
+<h2>  Submission </h2>
+
+<ul>
+
+<li> Read <a href="http://www.cs.binghamton.edu/~mgovinda/courses/cs342/assignments/README.txt"> this</a> file for general
+guidelines on how to prepare a README for your submission.
+
+</li><li> Run "ant clean" and make sure all class files, object files (.o
+files), executables, and backup files are deleted before creating a
+zip or tarball. To create a tarball, you need to "tar" and then "gzip"
+your top level directory. Create a tarball of the directory
+lastName_firstName_assign1. We should be able to compile and execute
+your code using the makefile and instructions you provide in the
+README.txt file.
+
+</li><li> Instructions to create a tarball
+<ul>
+<li> Make sure you are one level above the directory firstName_LastName_assign1.
+</li><li> tar -cvf firstName_LastName_assign1.tar firstName_LastName_assign1/
+</li><li> gzip firstName_LastName_assign1.tar
+</li></ul>
+
+
+</li><li> <b> BONUS </b>: A better way to create a tarzip file for submission is to make it
+an ANT target. You can add the creation of tar and gzip in the
+build.xml file. If you are the first to post a working version of the
+build.xml addition for tar and zip, then you will get 2 bonus points
+for this assignment.
+
+</li><li> Do NOT send your assignment as an email attachment to be considered as submission.
+
+</li><li> Upload your assignment to Blackboard, assignment-1.
+
+
+</li></ul>
+
+
+<h3> General Requirements </h3> 
+<ul>
+
+<li> Start early and avoid panic during the last couple of days.
+
+</li><li> Submit a README.txt file (placed at the top level). The
+README.txt file should be filled out as described in that file.
+
+</li><li> You need to provide exception handling in your code. 
+
+</li><li> Separate out code appropriately into methods, one for each purpose. 
+
+</li><li> You should document your code. The comments should not exceed 72
+coloums in width. Use javadoc style comments if you are coding in Java.
+
+</li><li>  Do not use "import XYZ.*" in your code. Instead, import each required type individually.
+
+</li><li> EVERY line of code that you submit in this assignment should be
+written by you, or be part of the code template provided for
+this assignment, or be from a website/book that you have cited in the
+README. Do NOT show your code to any other group. Our code-comparison
+software can very easily detect similarities.
+
+</li><li> All objects, in Java, that may be needed for debugging purposes
+should have the "toString()" method defined.
+
+</li></ul>
+
+<h3> Late Submissions </h3>
+
+<ul>
+
+<li> The policy for late submissions is that you will lose 10% of the
+grade for each day that your submission is delayed.
+
+</li></ul>
+
+
+<h3> Grading Guidelines </h3>
+
+Grading guidelines have been posted <a href="http://www.cs.binghamton.edu/~mgovinda/courses/cs342/assignments/assign1/assign1Grading.html">here</a>.
+
+
+
+<p>
+</p><p>
+
+</p><address>mgovinda at cs dot binghamton dot edu</address>
+Back to <a href="http://www.cs.binghamton.edu/~mgovinda/courses/cs342/index.html"> CS 542: Programming Design Patterns</a>
+<!-- hhmts start -->
+<!-- hhmts end -->
+ 
+
+
+
+
+
+
+
+
+
+</li></body></html>

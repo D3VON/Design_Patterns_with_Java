@@ -1,0 +1,27 @@
+OO design principals
+====================
+
+Encapsulate what varries.
+                 -------
+
+Favor composition over inheritance.
+
+
+Program to interfaces (abstract classes), not implementations.
+
+
+Strive for loosely coupled designs between objects that interact.
+           ---------------                 ---------------------
+
+Classes should be open for extension, closed for modification.
+
+
+Depend on abstractions.  Do not depend on concrete classes. 
+(This is the "dependency inversion principle"
+   -----Guidelines for dep. inv. princ.
+   1. no variable should hold a reference to a concrete class
+      (use factory method to get around that)
+   2. no class should derive from a concrete class
+      (derive from abstract class or interface)
+   3. no method should override an implemented method of any of its base classes
+

@@ -1,0 +1,61 @@
+
+<project name="threadPools" default="compile" basedir=".">
+
+  <property name="build.compiler"       value="modern"/>
+  <property name="src"                  value="src"/>
+  <property name="BUILD"                value="build"/>
+  <property name="classes"              value="${BUILD}/classes"/>
+
+
+  <target name="compile"
+          depends="threadPools"/>
+
+  <target name="clean">
+       <delete dir="${BUILD}"/>
+  </target>
+
+  <!-- Prepare target directories -->
+  <target name="prepare">
+        <mkdir dir="${BUILD}"/>
+        <mkdir dir="${classes}"/>
+  </target>
+
+
+  <!-- ** means all subdirectories as well -->
+  <!-- * means all files in the current directory -->
+  <!-- for just java files use *.java -->
+
+  <target name="threadPools" depends="prepare">
+    <javac srcdir="${src}"
+           includes="threadPools/**"
+           excludes="**/package.html"
+           destdir="${classes}"
+           classpath="${classes}"
+           debug="on"
+           optimize="on"
+           deprecation="off"/>
+  </target>
+
+ <target name="jar">
+        <mkdir dir="${BUILD}/jar"/>
+        <jar destfile="${BUILD}/jar/threadPools.jar" basedir="${BUILD}/classes">
+            <manifest>
+                <attribute name="Main-Class" value="threadPools.driver.Driver"/>
+            </manifest>
+        </jar>
+    </target>
+
+
+<target name="run" depends="jar">
+        <java jar="${BUILD}/jar/threadPools.jar"  fork="true">
+	  <arg value="120"/>    <!--the number you want factorized -->
+          <arg value="5"/>  <!--capacity - number of threads in the pools -->
+          <arg value="5"/>  <!--MM - num Generator threads -->
+          <arg value="4"/>  <!--WW - num Worker threads -->
+          <arg value="1"/>  <!--debug level -->
+	 </java>
+	
+    </target>
+
+
+</project>

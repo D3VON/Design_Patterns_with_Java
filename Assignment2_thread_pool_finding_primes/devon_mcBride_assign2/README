@@ -1,0 +1,106 @@
+
+cs342 Program Design Patterns
+Spring 2011
+PROJECT 2 README FILE
+
+Due Date: Friday, March 4th, 2011
+Submission Date: Monday, March 7th, 2011
+Grace Period Used This Project: Prof. Govindaraju authorized a deadline of
+                                March 7th since I was working alone 
+										  (& working hard). 
+Author(s): Devon McBride
+e-mail(s): dmcbrid1@binghamton.edu
+
+
+PURPOSE:
+
+  - Write multithreaded code to find:
+		1. a given amount of random numbers (specified in command line);
+		2. which of those numbers are prime. 
+  - Two groups of threads run concurrently storing and reading
+    from a shared data structure: 
+		1. those producing random numbers;
+		2. those consuming random numbers and storing to a result data structure. 
+  - Implement "debug level" logic to print debugging information based on a 
+    user-provided debug level.
+
+PERCENT COMPLETE:
+
+  I believe I have completed 100% of this project.
+
+PARTS THAT ARE NOT COMPLETE:
+
+  n/a
+
+BUGS:
+
+  EmptyStackException frequently encountered at the singleton data structure 
+  shared among the producer/consumer threads. 
+
+FILES:
+
+  Included with this project are 6 files:
+
+  src/toyThreads/driver/Driver.java --the driver of the program, 
+												  where main() is. 
+  src/toyThreads/primeFactors/Factorizer.java --handles finding factors.
+  src/toyThreads/primeFactors/Results.java --stores results for later use.
+  src/toyThreads/util/Debug.java --where the debug level given by the user 
+                                   (ant) is stored.
+  build.xml, --the ant file that controls compiling, creating jar files, 
+               & running the code.
+  README, --the text file you are presently reading
+
+SAMPLE OUTPUT:
+
+  % ant run
+  Buildfile: build.xml
+
+  jar:
+
+  run:
+       [java] Debug value is 6
+       [java] Arguments are: 120 3 6
+       [java] 2 3 4 5 6 8 10 12 15 20 24 30 40 60 
+       [java]  Good Bye 
+
+
+  BUILD SUCCESSFUL
+  Total time: 2 seconds
+
+
+
+TO COMPILE: see TO RUN:
+TO RUN:
+
+  You can compile and run the code with the following commands in the directory 
+  threadsStarter.  Note that the file build.xml controls the processing of
+  compiling, creating jarfiles, and running the code. 
+
+  ant compile
+
+  ant jar
+
+  ant run
+
+EXTRA CREDIT:
+
+  n/a
+
+BIBLIOGRAPHY:
+
+  * http://www.cs.binghamton.edu/~mgovinda/courses/cs542/index.html
+
+  * http://en.literateprograms.org/Miller-Rabin_primality_test_(Java)
+
+  * http://www.informit.com/articles/article.aspx?p=30483
+
+ACKNOWLEDGEMENT:
+
+  During the coding process one or more of the following people may have been
+  consulted. Their help is **greatly** appreciated.
+
+  Madhusudhan Govindaraju 
+  Elif Dede
+  Jessica Hartog
+  Sohrab Saadat

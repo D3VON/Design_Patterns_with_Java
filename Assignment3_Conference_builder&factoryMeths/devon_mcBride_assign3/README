@@ -1,0 +1,230 @@
+
+cs342 Program Design Patterns
+Spring 2011
+PROJECT 3 README FILE
+
+Due Date: Friday, March 17th, 2011
+Submission Date: Friday, March 18th, 2011
+Grace Period Used This Project: Prof. Govindaraju authorized an extended
+                                due date/time of 1pm, March 18th, 2011
+										  for the entire class. 
+Author(s):	Devon McBride
+				Thomas John Orourke
+				Daniel Scott
+e-mail(s):	dmcbrid1@binghamton.edu
+				torourk2@binghamton.edu
+				dscott5@binghamton.edu
+
+PURPOSE:
+
+	To develop software that can be used by each attendee of a Design Patterns
+	Conference at Binghamton University. The attendees of the conference have 
+	the following activities during the conference: register for the conference,
+	visit one of 3 labs to work on a programming contest, decide which of the 
+	6 presentation sessions to attend (all 6 sessions will be going on at the 
+	same time), and decide which of the 3 restaurants to visit for a working-
+	dinner. Each attendee will complete all these activites during the 
+	conference. The attendee's choices will result in a different time (in 
+	minutes), cost (in dollars), and carbon-footprint (in tonnes of CO2). 
+	Determine the design pattern(s) that fit best for the above problem (and 
+	the given constraints below). Apply the pattern(s) exactly as discussed 
+	during the lectures. 
+	Your code should hardcode, in the appropriate way, the list of restaurants, 
+	labs, and presentation sessions involved in this conference. 
+	There are 3 restaurants to choose from: PS Restaurant, Number 5 Restaurant, 
+	Lemongrass Restaurant. The dinner expense in these restaurants is the same 
+	(fixed price) for each attendee: $50.00 (PS), $40 (No. 5), and $35.00 
+	(Lemongrass). Find an appropriate way to hardcode time and carbon footprint 
+	for each of these restaurants. 
+	The options for visiting the labs are: use the campus-bus, take a series of 
+	elevators and tunnels in different buildings, or just walk and take the stairs 
+	in each building on the path. [Affects time, and carbon footprint.] 
+	Registration is done using a credit card. If a BU Alumni Platinum Visa Credit 
+	card is used, there is 10% discount on the registration fee. [Affects cost.] 
+	The choice of presentation session affects just the carbon footprint, as they 
+	are located in different buildings. Updated: Wed Mar 9 10:16:37 EST 2011 
+	There are 3 labs, in different parts of the campus, which the attendees can use 
+	for the design pattern programming contest. [Affects time, due to queues, and 
+	carbon footprint as some computers are energy star certified.] Updated: 
+	Wed Mar 9 10:16:37 EST 2011 
+	For each activitiy, use your own estimate to get the cost in dollars, and carbon 
+	footprint, and time in minutes (unless explicitly specified in the requirements). 
+	In the Driver code, you can hardcode (in an elegant way) the choices made by an 
+	attendee. Assume each attendee will use your library (jar file) and example 
+	Driver code to write their own driver code to determine the cost in dollars, 
+	time in minutes, and carbon footprint of her/his schedule. 
+	The output of running the driver code should be the list of activities of
+	the attendee along with the cost, time, and carbon footprint for each 
+	activitiy (not the Total cost, time, carbon footprint). 
+   Implement "debug level" logic to print debugging information based on a 
+   user-provided debug level.
+
+PERCENT COMPLETE:
+
+  We have completed 99% of this project.
+
+PARTS THAT ARE NOT COMPLETE:
+
+  Although we have demonstrated the ability of the code to handle (extend) the
+  cost functionality to different currencies, we have NOT implemented the same
+  logic to handle changing the time so it is calculated in hours, or the carbon 
+  footprint using a currently unknown standard. 
+  
+  NONETHELESS, we have demonstrated, by means of the cost classes (using the 
+  factory method pattern) the "proof of concept" of how it would be done for 
+  carbon footprint and time. 
+
+BUGS:
+
+  none
+
+FILES:
+
+  Included with this project are 38 files:
+
+  src/designConf/driver/DriverOfConference.java -- the driver
+  src/designConf/conference/Activities.java -- abstract storage of activities
+  src/designConf/conference/BUActivities.java -- storage for activities
+  src/designConf/conference/Conference.java -- abstract builder of conferences
+  src/designConf/conference/BUConference.java -- builder of the conference
+  src/designConf/conference/CreditCard.java -- interface for charging 
+															conference fee by credit card
+  src/designConf/conference/Visa.java -- for charging conference fee by 
+																				credit card
+  src/designConf/conference/MasterCard.java -- for charging conference fee 
+																				by credit card
+  src/designConf/conference/BUVisa.java -- for charging conference fee by 
+											credit card (has discount associated with it)
+  src/designConf/conference/Amex.java -- for charging conference fee 
+																				by credit card
+  src/designConf/conference/Lab.java -- interface for lab information
+  src/designConf/conference/LibraryGroundLab.java -- lab information 
+  src/designConf/conference/EngineeringLab.java -- lab information 
+  src/designConf/conference/AcademicAPod.java -- lab information 
+  src/designConf/conference/Transport.java -- interface for transportation 
+																					information
+  src/designConf/conference/Walking.java -- transportation information 
+  src/designConf/conference/Elevators.java -- transportation information 
+  src/designConf/conference/Campusbus.java -- transportation information 
+  src/designConf/conference/Restaurant.java -- interface for restaurant 
+																					information
+  src/designConf/conference/PSRestaurant.java -- restaurant information
+  src/designConf/conference/No5Restaurant.java -- restaurant information
+  src/designConf/conference/LemongrassRestaurant.java -- restaurant 
+																					information
+  src/designConf/conference/Presentation.java -- interface for presentation 
+																					information
+  src/designConf/conference/State.java -- presentation information
+  src/designConf/conference/Observer.java -- presentation information
+  src/designConf/conference/FactoryMethod.java -- presentation information
+  src/designConf/conference/UnitFactory.java -- interface for choosing which 
+																					units to use
+  src/designConf/conference/BUUnitFactory.java -- factory methods for choosing 
+																			which units to use
+  src/designConf/conference/Time.java -- interface for time unit information
+  src/designConf/conference/TimeMinutes.java -- time unit information
+  src/designConf/conference/CarbonFootPrint.java -- interface for carbon 
+																	footprint unit information
+  src/designConf/conference/CFPTons.java -- carbon footprint unit information
+  src/designConf/conference/Cost.java -- interface for cost/currency 
+																					information
+  src/designConf/conference/CostDollar.java -- cost/currency information
+  src/designConf/conference/CostEuro.java -- cost/currency information
+  src/designConf/util/Debug; -- store debugging level passed by user
+  build.xml, --the ant file that controls compiling, creating jar files, 
+																			& running the code.
+  README, --the text file you are presently reading
+
+DEBUG INPUT CODES:
+
+	Debug leves are cumulative.  They print all output of lower levels. 
+
+	0 - No output printed. Only error messages printed. 
+	1 - Only ouput from the Driver code is printed.
+	2 - Print state of instantiated BUConference object. 
+	3 - Print state of instantiated Activities object. 
+	4 - Print state of all objects contained in Activities object. 
+
+SAMPLE OUTPUT:
+
+	bingsuns2% ant run
+	Buildfile: build.xml
+
+	jar:
+
+	run:
+
+     [java] The registration fee is 50.625 Euros and you are paying
+     [java] ......................with your BU Alumni Platinum Visa card.
+     [java] You have chosen to attend Factory Method Pattern Presentation,
+     [java] ......................which will take 120 minutes,
+     [java] ......................and have a cfp of 8.0E-4 tons of CO2.
+     [java] Going by OCC Blue Bus, will take 3 minutes
+     [java] ......................and have a cfp of 9.0E-4 tons of CO2.
+     [java] The programming contest you chose is at Academic A Pod,
+     [java] ...................... and will take 110 minutes,
+     [java] ......................and has a cfp of 0.0075 tons of CO2.
+     [java] Your dinner at P.S. Restaurant will cost 37.5 Euros,
+     [java] ......................and will take 95 minutes,
+     [java] ......................and has a cfp of 7.0E-4 tons of CO2.
+
+
+     [java] The registration fee is $75.0 and you are paying
+     [java] ......................with your American Express card.
+     [java] You have chosen to attend State Pattern Presentation,
+     [java] ......................which will take 145 minutes,
+     [java] ......................and have a cfp of 0.0012 tons of CO2.
+     [java] Going by elevators & tunnels will take 12 minutes
+     [java] ......................and have a cfp of 1.0E-4 tons of CO2.
+     [java] The programming contest you chose is at Engineering Lab, room G7,,
+     [java] ...................... and will take 48 minutes,
+     [java] ......................and has a cfp of 8.0E-4 tons of CO2.
+     [java] Your dinner at The No. 5 Restaurant will cost $60.0,
+     [java] ......................and will take 80 minutes,
+     [java] ......................and has a cfp of 3.0E-4 tons of CO2.
+
+
+     [java] The registration fee is 56.25 Euros and you are paying
+     [java] ......................with your MasterCard card.
+     [java] You have chosen to attend Observer Pattern Presentation,
+     [java] ......................which will take 100 minutes,
+     [java] ......................and have a cfp of 0.0075 tons of CO2.
+     [java] Going by walking and taking the stairs, will take 20 minutes
+     [java] ......................and have a cfp of 0.0010 tons of CO2.
+     [java] The programming contest you chose is at Academic A Pod,
+     [java] ...................... and will take 110 minutes,
+     [java] ......................and has a cfp of 0.0075 tons of CO2.
+     [java] Your dinner at Lemongrass Kitchen & Lounge will cost 26.25 Euros,
+     [java] ......................and will take 60 minutes,
+     [java] ......................and has a cfp of 0.0010 tons of CO2.
+
+
+	BUILD SUCCESSFUL
+	Total time: 1 second
+	bingsuns2% 
+
+
+TO COMPILE: see TO RUN:
+TO RUN:
+
+  You can compile and run the code with the following commands in the directory 
+  threadsStarter.  Note that the file build.xml controls the processing of
+  compiling, creating jarfiles, and running the code. 
+
+  ant compile
+
+  ant jar
+
+  ant run
+
+EXTRA CREDIT:
+
+  n/a
+
+BIBLIOGRAPHY:
+
+  * http://www.cs.binghamton.edu/~mgovinda/courses/cs542/index.html
+
+ACKNOWLEDGEMENT:
+
+  n/a
