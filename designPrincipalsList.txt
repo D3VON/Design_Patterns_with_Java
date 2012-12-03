@@ -1,8 +1,8 @@
 OO design principals
 ====================
 
-Encapsulate what varries.
-                 -------
+Encapsulate what varies.
+                 ------
 
 Favor composition over inheritance.
 
